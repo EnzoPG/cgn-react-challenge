@@ -9,7 +9,7 @@ export const fetchUniversities = createAsyncThunk(
   'universities/fetchUniversities',
   async (searchTerm: string, { rejectWithValue }) => {
     try {
-      const response = await fetch(`${API_URL}?name=${searchTerm}`)
+      const response = await fetch(`${API_URL}?name=${searchTerm}`, { referrerPolicy: "unsafe-url" })
 
       if (!response.ok) {
         throw new Error(`API error: ${response.status}`)
