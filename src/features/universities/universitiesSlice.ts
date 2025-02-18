@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
 import { University } from './universitiesTypes'
 
-const API_URL = 'https://thingproxy.freeboard.io/fetch/http://universities.hipolabs.com/search'
+const API_URL = 'https://corsproxy.io/?http://universities.hipolabs.com/search'
 
 // Async thunk for fetching universities
 export const fetchUniversities = createAsyncThunk(
