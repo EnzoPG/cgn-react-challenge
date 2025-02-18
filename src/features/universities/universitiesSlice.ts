@@ -2,30 +2,14 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
 import { University } from './universitiesTypes'
 
-const API_URL = 'https://cors-anywhere.herokuapp.com/http://universities.hipolabs.com/search'
+const API_URL = 'https://thingproxy.freeboard.io/fetch/http://universities.hipolabs.com/search'
 
 // Async thunk for fetching universities
 export const fetchUniversities = createAsyncThunk(
   'universities/fetchUniversities',
   async (searchTerm: string, { rejectWithValue }) => {
     try {
-      const response = await fetch(`${API_URL}?name=${searchTerm}`, {
-        headers: {
-          Accept: '*/*',
-          'Cache-Control': 'no-cache',
-          Connection: 'keep-alive',
-          DNT: '1',
-          Origin: 'null',
-          Pragma: 'no-cache',
-          'Sec-Fetch-Dest': 'empty',
-          'Sec-Fetch-Mode': 'cors',
-          'Sec-Fetch-Site': 'cross-site',
-          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36',
-          'sec-ch-ua': '"Chromium";v="133", "Not(A:Brand";v="99"',
-          'sec-ch-ua-mobile': '?0',
-          'sec-ch-ua-platform': '"macOS"'
-        }
-      })
+      const response = await fetch(`${API_URL}?name=${searchTerm}`)
 
       if (!response.ok) {
         throw new Error(`API error: ${response.status}`)
