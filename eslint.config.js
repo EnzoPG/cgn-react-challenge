@@ -19,7 +19,7 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      'no-unused-vars': 'off',
+      "no-unused-vars": ["warn", { "varsIgnorePattern": "^React$" }],
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },

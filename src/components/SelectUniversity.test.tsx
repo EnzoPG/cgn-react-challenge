@@ -1,4 +1,5 @@
-import * as React from 'react'
+// eslint-disable-next-line no-unused-vars
+import React from "react"
 import { render, screen, fireEvent, waitFor } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import { Provider } from "react-redux"
