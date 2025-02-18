@@ -21,7 +21,7 @@ yarn dev
 ### To execute the test suite, run the following command:
 
 ```bash
-NODE_OPTIONS=--experimental-vm-modules npx jest
+yarn test
 ```
 
 ## 🛠️ Technologies Used
